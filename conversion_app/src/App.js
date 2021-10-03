@@ -2,22 +2,25 @@ import React, { useState, useEffect }from 'react'
 import './App.css';
 import InputRow from './components/InputRow';
 import TargetRow from './components/TargetRow';
-import convert from 'convert-units'
-import { volume, temperature } from 'units-converter';
+import Calculator from './components/Calculator';
+// import convert from 'convert-units'
+import configureMeasurements, { volume, temperature } from 'convert-units';
 
 
-const temperatures = convert().possibilities('temperature')
-const volumes = convert().possibilities('volume')
+const convert = configureMeasurements({
+  volume,
+  temperature
+});
 
 function App() {
 
-  const [tempOptions, setTempOptions] = useState([]);
-  const [volumeOptions, setVolumeOptions] = useState([]);
+  const unitOptions = useState
+  // const [tempOptions, setTempOptions] = useState([]);
+  // console.log(tempOptions)
 
-  useEffect (() => {
-    setTempOptions([console.log(Object.keys(temperatures)), console.log(...Object.values(temperatures))]);
-    setVolumeOptions([console.log(Object.keys(volumes)), console.log(...Object.values(volumes))]);
-  }, [])
+  // useEffect (() => {
+  //   setTempOptions([...Object.values(temperatures)])
+  // }, [])
 
   return (
     <>
@@ -29,7 +32,7 @@ function App() {
         {/* <p> {console.log(temperatures)} </p> */}
       </div>
       <TargetRow />
-      {/* <Calculator /> */}
+      <Calculator />
     </>
   );
 }

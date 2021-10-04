@@ -8,14 +8,21 @@ import convert from 'convert-units'
 const temperature = convert().possibilities('temperature')
 const volume = convert().possibilities('volume')
 
-
 function App() {
 
   const [unitOptions, setUnitOptions] = useState([]);
-  // console.log(unitOptions)
+  const [fromUnit, setFromUnit] = useState();
+  const [toUnit, setToUnit] = useState();
+
+  // console.log(typeof(unitOptions))//object
 
   useEffect (() => {
     setUnitOptions([...Object.values(temperature), ...Object.values(volume)]);
+    console.log(typeof(unitOptions))
+    const unit = Object.keys(unitOptions)
+
+    // setFromUnit(Object.values(firstUnit))
+    // setToUnit(Object.values(toUnit))
   }, [])
 
   return (
@@ -27,7 +34,6 @@ function App() {
       />
       <div>
         <p className="subhead">Convert to</p>
-        {/* <p> {console.log(temperatures)} </p> */}
       </div>
       <TargetRow 
       unitOptions={unitOptions}

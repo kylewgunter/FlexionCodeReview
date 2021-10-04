@@ -12,7 +12,7 @@ const volume = convert().possibilities('volume')
 function App() {
 
   const [unitOptions, setUnitOptions] = useState([]);
-  console.log(unitOptions)
+  // console.log(unitOptions)
 
   useEffect (() => {
     setUnitOptions([...Object.values(temperature), ...Object.values(volume)]);
@@ -22,12 +22,16 @@ function App() {
     <>
       <h1>Unit Converter</h1>
       <hr></hr>
-      <InputRow />
+      <InputRow 
+        unitOptions={unitOptions}
+      />
       <div>
         <p className="subhead">Convert to</p>
         {/* <p> {console.log(temperatures)} </p> */}
       </div>
-      <TargetRow />
+      <TargetRow 
+      unitOptions={unitOptions}
+      />
       <Calculator />
     </>
   );

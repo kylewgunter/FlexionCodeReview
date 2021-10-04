@@ -3,24 +3,20 @@ import './App.css';
 import InputRow from './components/InputRow';
 import TargetRow from './components/TargetRow';
 import Calculator from './components/Calculator';
-// import convert from 'convert-units'
-import configureMeasurements, { volume, temperature } from 'convert-units';
+import convert from 'convert-units'
 
+const temperature = convert().possibilities('temperature')
+const volume = convert().possibilities('volume')
 
-const convert = configureMeasurements({
-  volume,
-  temperature
-});
 
 function App() {
 
-  const unitOptions = useState
-  // const [tempOptions, setTempOptions] = useState([]);
-  // console.log(tempOptions)
+  const [unitOptions, setUnitOptions] = useState([]);
+  console.log(unitOptions)
 
-  // useEffect (() => {
-  //   setTempOptions([...Object.values(temperatures)])
-  // }, [])
+  useEffect (() => {
+    setUnitOptions([...Object.values(temperature), ...Object.values(volume)]);
+  }, [])
 
   return (
     <>

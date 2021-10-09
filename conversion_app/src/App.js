@@ -17,32 +17,47 @@ const volume = convert().possibilities('volume')
 function App() {
 
   const [unitOptions] = useState([...Object.values(temperature), ...Object.values(volume)]);
-  const [fromUnit, setFromUnit] = useState();
-  const [toUnit, setToUnit] = useState();
+  const [startUnit, setStartUnit] = useState(unitOptions[0]);
+  const [convertUnit, setConvertUnit] = useState(unitOptions[0]);
+  // const [studentAnswer, setStudentAnswer] = useState()
 
   console.log(unitOptions)
+  console.log(startUnit, typeof(startUnit))
+  console.log(convertUnit, typeof(convertUnit))
+
+  // convert function from convert units
+  // convert(1).from('l').to('ml');
+
+  
+
+  // const onChange = (e) => {
+
+  // };
 
   useEffect (() => {
-    // setUnitOptions([...Object.values(temperature), ...Object.values(volume)])
-    // setFromUnit = () => {
-    
-    // }
-  }, [])
+
+
+  }, [unitOptions])
 
   return (
     <>
       <h1>Unit Converter</h1>
       <hr></hr>
       <InputRow
-        unitOptions={unitOptions}
+        unitOptions={unitOptions} 
+        selectedUnit={startUnit}
+        onChangeUnit={e => setStartUnit(e.target.value)}
       />
       <div>
         <p className="subhead">Convert to</p>
       </div>
       <TargetRow 
         unitOptions={unitOptions}
+        onChangeUnit={e => setConvertUnit(e.target.value)}
       />
-      <Calculator />
+      <Calculator unitOptions={unitOptions}
+        selectedUnit={convertUnit}
+      />
     </>
   );
 }

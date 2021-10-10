@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100 vh;
+  text-align: center;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+hr {
+  margin: 1rem
+}
+
+h3 {
+  margin: 1rem;
+}
+/* Converter Input Fields */
+.input{
+  border: 1px solid #333;
+  border-radius: .3em;
+  padding: .25rem;
+  width: 11em;
+}
+
+.target {
+  border: 1px solid #333;
+  border-radius: .3em;
+  padding: .25rem;
+  width: 11em;
+}
+
+/* drop down select */
+select{
+  margin-left: .5rem;
+  border-radius: .3rem;
+}
+
+.subhead{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+/* button */
+button {
+  background-color: white;
+  text-decoration-color:;
+  margin-top: 1.5rem;
+  border: 1px solid black;
+  border-radius: .3em;
+  padding: .25rem;
+  width: 8em;
+}

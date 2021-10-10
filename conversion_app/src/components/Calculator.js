@@ -9,13 +9,6 @@ export default function Calculator(props) {
     startValue,
     targetValue
   } = props
-
-  // console.log(parseFloat(targetValue))
-  // // console.log(targetValue, typeof(targetValue))
-  // // console.log(startValue, startUnit, convertUnit)
-
-  // // console.log(typeof(startValue), typeof(startUnit), typeof(convertUnit))
-  
   
   const calculate = () => {
     try {
@@ -32,10 +25,6 @@ export default function Calculator(props) {
       }
     }
   }
-
-  // const calculate = () => {
-  //   window.alert(startValue)
-  //  }
 
   return (
     <div>

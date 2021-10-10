@@ -16,19 +16,6 @@ function App() {
   const [startValue, setStartValue] = useState(0)
   const [targetValue, setTargetValue] = useState(0)
 
-  // console.log(startUnit, typeof(startUnit))
-  // console.log(convertUnit, typeof(convertUnit))
-  // console.log(startValue, typeof(startValue))
-  // console.log(targetValue, typeof(targetValue))
-
-  // convert function from convert units
-  // convert(1).from('l').to('ml');
-
-  // useEffect (() => {
-
-
-  // }, [unitOptions])
-
   return (
     <>
       <h1>Unit Converter</h1>
@@ -54,7 +41,6 @@ function App() {
       convertUnit={convertUnit}
       startValue={startValue}
       targetValue={targetValue}
-
       />
     </>
   );

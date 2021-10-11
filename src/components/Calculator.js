@@ -10,6 +10,7 @@ export default function Calculator(props) {
     targetValue
   } = props
   
+  // compares state values versus the input values and creates a window alert on submit
   const calculate = () => {
     try {
       const convertedValue = convert(parseInt(startValue)).from(startUnit).to(convertUnit).toFixed(2);

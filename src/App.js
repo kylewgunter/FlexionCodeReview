@@ -40,6 +40,7 @@ function App() {
         onChangeUnit={e => setConvertUnit(e.target.value)}
         onChangeValue={e => setTargetValue(e.target.value)}
       />
+      {/* takes all values from inputs and compares them versus a strict equals and submits a window alert */}
       <Calculator 
       unitOptions={unitOptions}
       startUnit={startUnit}

@@ -9,6 +9,7 @@ export default function InputRow(props) {
   } = props
 
   return (
+    // accepts input as numbers only and wont let user input strings
     <div>
       <input type='number' className='input' placeholder='enter start value' onChange={onChangeValue} />
       <select value={selectedUnit} onChange={onChangeUnit}>
